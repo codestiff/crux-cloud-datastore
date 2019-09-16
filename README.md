@@ -14,3 +14,12 @@ Example usage:
                   :kv-backend "crux.kv.memdb.MemKv"
                   :db-dir db-dir})
 ```
+
+
+## Testing
+
+```bash
+docker build . --build-arg USER=$(whoami) --build-arg UID=$(id -u) -t ccf
+./run.sh -A:test:runner
+```
+
