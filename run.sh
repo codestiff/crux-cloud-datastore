@@ -1,3 +1,4 @@
 #!/bin/sh
 
-docker build . --build-arg USER=$(whoami) --build-arg UID=$(id -u) -t ccf
+docker run -it -v $(pwd)/:/home/user/ --entrypoint /usr/local/bin/clojure ccf $@
+
