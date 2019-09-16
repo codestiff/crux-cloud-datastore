@@ -1,9 +1,9 @@
-(ns avisi.crux.bootstrap.active-objects
+(ns net.xlfe.crux.bootstrap.cloud-firestore
   (:require [crux.db :as db]
             [crux.tx :as tx]
             [crux.bootstrap :as b]
             [crux.lru :as lru]
-            [avisi.crux.active-objects :as ao-tx-log]
+            [net.xlfe.crux.cloud-firestore :as cf-tx-log]
             [crux.io :as cio]
             [clojure.tools.logging :as log])
   (:import [java.util Date]

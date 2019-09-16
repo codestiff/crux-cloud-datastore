@@ -1,4 +1,4 @@
-(ns avisi.crux.active-objects
+(ns net.xlfe.crux.cloud-firestore
   (:require [crux.db :as db]
             [clojure.spec.alpha :as s]
             [crux.codec :as c]
