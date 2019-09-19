@@ -1,4 +1,4 @@
-(ns net.xlfe.crux.bootstrap.cloud-firestore-test
+(ns net.xlfe.crux.bootstrap.cloud-datastore-test
   (:require [avisi.crux.fixtures :refer [*api* with-ao-node]]
             [crux.codec :as c]
             [clojure.test :as t])

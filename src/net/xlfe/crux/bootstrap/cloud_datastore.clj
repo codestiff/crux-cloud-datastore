@@ -1,9 +1,9 @@
-(ns net.xlfe.crux.bootstrap.cloud-firestore
+(ns net.xlfe.crux.bootstrap.cloud-datastore
   (:require [crux.db :as db]
             [crux.tx :as tx]
             [crux.bootstrap :as b]
             [crux.lru :as lru]
-            [net.xlfe.crux.cloud-firestore :as cf-tx-log]
+            [net.xlfe.crux.cloud-datastore :as cd-tx-log]
             [crux.io :as cio]
             [clojure.tools.logging :as log])
   (:import [java.util Date]

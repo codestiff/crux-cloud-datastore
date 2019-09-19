@@ -1,5 +1,5 @@
 (ns net.xlfe.crux.fixtures
-  (:require [net.xlfe.crux.bootstrap.cloud-firestore :as b]
+  (:require [net.xlfe.crux.bootstrap.cloud-datastore :as b]
             [crux.io :as cio])
   (:import [net.java.ao EntityManager]
            [com.atlassian.activeobjects.external ActiveObjects]

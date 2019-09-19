@@ -1,4 +1,4 @@
-(ns net.xlfe.crux.cloud-firestore
+(ns net.xlfe.crux.cloud-datastore
   (:require [crux.db :as db]
             [clojure.spec.alpha :as s]
             [crux.codec :as c]
@@ -6,11 +6,10 @@
             [ghostwheel.core :refer [>defn => | <- ?]]
             [clojure.tools.logging :as log]
             [clojure.edn :as edn])
-  (:import [com.atlassian.activeobjects.external ActiveObjects]
+  (:import [com.google.cloud.datastore Datastore DatastoreOptions Entity Key KeyFactory Query StringValue Transaction]
+           [com.google.cloud Timestamp]
            [java.util Date Map]
-           [java.io Closeable]
-           [net.java.ao Query]
-           [avisi.crux.tx EventLogEntry]))
+           [java.io Closeable]))
 
 (def batch-size 1000)
 
@@ -80,7 +79,7 @@
   (add-listener! [this key f])
   (remove-listener! [this key]))
 
-(defrecord ActiveObjectsTxLog [ao listeners]
+(defrecord CloudDatastoreTxLog [cd listeners]
   db/TxLog
   (submit-doc [this content-hash doc]
     (save-event-log-entry! ao ::doc (.toString content-hash) doc))
